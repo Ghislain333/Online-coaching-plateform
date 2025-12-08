@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education website</title>
+
+    <!-- style links -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/classpage.css">
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="container nav__container">
+            <a href="/"><h4>CoachIE</h4></a>
+            <ul class="nav__menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Singn up</a></li>
+            </ul>
+            <button id="open-menu-btn"><i class="fa fa-bars"></i></button>
+            <button id="close-menu-btn"><i class="fa fa-close"></i></button>
+        </div>
+    </nav>
+
+
+<!-- ********** Test Section *********** -->
+
+<section class="container class__container">
+    <h2>Now lets see if you have truly understood the previouse lesson <i id="icon" class="fa fa-book"></i></h2>
+    <div class="excercise__section">
+        <h3>Task Description <i id="icon" class="fa fa-pencil"></i></h3>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, eum animi commodi cupiditate magni,
+             repudiandae enim nostrum hic incidunt adipisci aperiam asperiores saepe rem, repellendus optio dolorem vitae! Nisi, repellat.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod quae, consequuntur,
+             eius et aut sunt exercitationem unde voluptatibus libero iure provident temporibus minus corporis sed enim quibusdam eum maxime doloribus!
+        </p>
+        <div class="task__image-description">
+            <h3>Your output should look like this <i id="icon" class="fa fa-eye"></i></h3>
+            <img src="img/task-description.webp" alt="">
+        </div>
+
+        <div class="task__code-editor">
+            <div class="left">
+                <label for="html">HTML <i id="icon" class="fa fa-html5"></i></label>
+                <textarea id="html-code" onkeyup="run()"></textarea>
+
+                <label for="html">CSS <i id="icon" class="fa fa-css3"></i></label>
+                <textarea id="css-code" onkeyup="run()"></textarea>
+
+                <label for="html">Javascript <i id="icon" class="fa fa-js"></i></label>
+                <textarea id="js-code" onkeyup="run()"></textarea>
+            </div>
+            <div class="right">
+                <label for=""> OUTPUT <i id="icon" class="fa fa-play"></i></label>
+                <iframe id="output"></iframe>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ********** End of Class Section *********** -->
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+  <!-- run function for code editor -->
+  <script>
+    function run(){
+        let htmlCode = document.getElementById("html-code").value;
+        let cssCode = document.getElementById("css-code").value;
+        let jsCode = document.getElementById("js-code").value;
+        let output = document.getElementById("output");
+        output.contentDocument.body.innerHTML = htmlCode+"<style>"+cssCode+"</style>";
+        output.contentWindow.eval(jsCode);
+        }
+  </script>
+</body>
+</html>
